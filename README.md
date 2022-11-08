@@ -1,4 +1,4 @@
-## Food Ordering App
+## Fast Food
 
 ### Features:
 
@@ -6,13 +6,13 @@
 
 ##### Here's features included in this project
 
-- Add to cart functionality
-- Shopping cart functionality
-- Product Filtering functionality
-- Product page
-- Cart and checkout page
+- Add to cart functionality 
+- Shopping cart functionality 
+- Product Filtering functionality 
+- Product page ok
+- Cart and checkout page  
 - Contact page
-- Login and Register page
+- Login and Register page 
 - Awesome modern minimalist UI
 
 ### Technologies Used:
