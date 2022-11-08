@@ -3,7 +3,7 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 
 import { Container, Row, Col } from "reactstrap";
-import products from "../assets/fake-data/products";
+import products from "../assets/data/products";
 import ProductCard from "../components/UI/product-card/ProductCard";
 
 import "../styles/all-foods.css";
