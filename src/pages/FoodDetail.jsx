@@ -86,14 +86,14 @@ const FoodDetail = () => {
               <div className="single__product-content">
                 <h2 className="product__title mb-3">{title}</h2>
                 <span className="product__price">
-                  Price: <span>${price}</span>
+                  Giá: <span>{price}₫</span>
                 </span>
                 <p className="category mb-5">
                   Category: <span>{category}</span>
                 </p>
 
                 <button onClick={addItem} className="addToCart__btn">
-                  Add to Cart
+                  Thêm vào giỏ hàng
                 </button>
               </div>
             </Col>
@@ -103,13 +103,13 @@ const FoodDetail = () => {
                   className={`${tab === "desc" ? "tab__active" : ""}`}
                   onClick={() => setTab("desc")}
                 >
-                  Desription
+                  Mổ tả món ăn
                 </h6>
                 <h6
                   className={`${tab === "rev" ? "tab__active" : ""}`}
                   onClick={() => setTab("rev")}
                 >
-                  Review
+                  Đánh giá
                 </h6>
               </div>
 
@@ -120,21 +120,21 @@ const FoodDetail = () => {
               ) : (
                 <div className="tab__form mb-3">
                   <div className="review pt-5">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">john1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="user__name mb-0">Superman</p>
+                    <p className="user__email">anhdhhnn@gmail.com</p>
+                    <p className="feedback__text">Ngon tuyệt</p>
                   </div>
 
                   <div className="review">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">john1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="user__name mb-0">toro</p>
+                    <p className="user__email">hhadxid@gmail.com</p>
+                    <p className="feedback__text">đồ ăn ở đây đỉnh của chóp</p>
                   </div>
 
                   <div className="review">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">john1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
+                    <p className="user__name mb-0">banji</p>
+                    <p className="user__email">bajjii011@gmail.com</p>
+                    <p className="feedback__text">ngon qua nen vao cmt danh gia</p>
                   </div>
 
                   <form className="form" onSubmit={submitHandle}>

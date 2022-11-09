@@ -9,11 +9,18 @@
 - Add to cart functionality 
 - Shopping cart functionality 
 - Product Filtering functionality 
-- Product page ok
+- Product page 
 - Cart and checkout page  
-- Contact page
 - Login and Register page 
 - Awesome modern minimalist UI
+
+
+### 
+- Contact page
+- auth user , login
+- confirm user 
+- history order
+
 
 ### Technologies Used:
 

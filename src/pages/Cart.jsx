@@ -40,14 +40,14 @@ const Cart = () => {
                 </table>
               )}
               <div className="mt-4">
-                <h6>Subtotal: <span className="cart__subtotal">${totalAmount}</span></h6>
-                <p>Taxes and shipping will caculator at checkout</p>
+                <h6>Tổng tiền: <span className="cart__subtotal">${totalAmount}</span></h6>
+                <p>Thuế và phí vận chuyển sẽ được tính khi thanh toán</p>
                 <div className="cart__page-btn">
                   <button className="addToCart__btn me-4">
-                      <Link to='/foods'>Continue Shopping</Link>
+                      <Link to='/foods'>Tiếp tục mua</Link>
                   </button>
                   <button className="addToCart__btn">
-                      <Link to='/checkout'>Proceed to checkout</Link>
+                      <Link to='/checkout'>Tiếp tục checkout</Link>
                   </button>
                 </div>
               </div>

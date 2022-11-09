@@ -28,17 +28,22 @@ const cartSlice = createSlice({
           price: newItem.price,
           quantity: 1,
           totalPrice: newItem.price,
-        });
+        })
+        alert("Thêm vào giỏ hàng thành công");
       } else {
         existingItem.quantity++;
         existingItem.totalPrice =
           Number(existingItem.totalPrice) + Number(newItem.price);
+        
       }
       state.totalAmount = state.cartItems.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
+      
+        
     },
+    
     // remove item
     removeItem(state, action) {
       const id = action.payload;
@@ -50,12 +55,15 @@ const cartSlice = createSlice({
         existingItem.quantity--;
         existingItem.totalPrice = Number(
           existingItem.totalPrice - Number(existingItem.price)
+          
         );
+       
       }
       state.totalAmount = state.cartItems.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
+     
     },
     // delete item
     deleteItem(state, action) {
@@ -63,8 +71,10 @@ const cartSlice = createSlice({
       const existingItem = state.cartItems.find((item) => item.id === id);
 
       if (existingItem) {
+      
         state.cartItems = state.cartItems.filter((item) => item.id !== id);
         state.totalQuantity = state.totalQuantity - existingItem.quantity;
+        alert("Bạn chắc chắn muốn xóa chứ")
       }
 
       state.totalAmount = state.cartItems.reduce(

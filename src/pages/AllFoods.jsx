@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 
@@ -42,7 +42,7 @@ const AllFoods = () => {
               <div className="search__widget d-flex align-items-center justify-content-between">
                 <input
                   type="text"
-                  placeholder="I'm looking for..."
+                  placeholder="Tìm kiếm món ăn của bạn"
                   value={searchItem}
                   onChange={(e) => setSearchItem(e.target.value)}
                 />
@@ -55,8 +55,6 @@ const AllFoods = () => {
               <div className="sorting__widget text-end">
                 <select className="w-50">
                   <option value="">Default</option>
-                  <option value="ascending">A - Z</option>
-                  <option value="descending">Z - A</option>
                   <option value="high-price">High Price</option>
                   <option value="low-price">Low Price</option>
                 </select>
