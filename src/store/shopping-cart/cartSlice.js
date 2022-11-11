@@ -1,9 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// 
+const items = localStorage.getItem('cartItems') != null ? JSON.parse(
+  localStorage.getItem('cartItems')) : []
+
+  
+const totalAmount = localStorage.getItem('totalAmount') != null ? JSON.parse(
+      localStorage.getItem('totalAmount')) : 0;
+
+const totalQuantity = localStorage.getItem('totalQuantity') != null ? JSON.parse(
+        localStorage.getItem('totalQuantity')) : 0;
+
+const setItemLocal = (item , totalAmount , totalQuantity ) => {
+  localStorage.setItem('cartItems',JSON.stringify(item));
+  localStorage.setItem('totalAmount',JSON.stringify(totalAmount));
+  localStorage.setItem('totalQuantity',JSON.stringify(totalQuantity));
+
+}
+
+
 const initialState = {
-  cartItems: [],
-  totalQuantity: 0,
-  totalAmount: 0,
+  cartItems: items,
+  totalQuantity: totalQuantity,
+  totalAmount: totalAmount,
 };
 
 const cartSlice = createSlice({
@@ -11,7 +30,7 @@ const cartSlice = createSlice({
   initialState: initialState,
 
   reducers: {
-    // add item
+    // thêm item
     addItem(state, action) {
       const newItem = action.payload;
       const existingItem = state.cartItems.find(
@@ -20,7 +39,7 @@ const cartSlice = createSlice({
       state.totalQuantity++;
 
       if (!existingItem) {
-        // note: if u use just redux u shouldn't mute state array, but if u use redux toolkit that will not a problem because redux toolkit clone the array behind the scene
+        
         state.cartItems.push({
           id: newItem.id,
           title: newItem.title,
@@ -40,11 +59,12 @@ const cartSlice = createSlice({
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
-      
-        
+      setItemLocal(state.cartItems.map((item) => item),
+      state.totalAmount,
+      state.totalQuantity )
     },
     
-    // remove item
+    // giảm item
     removeItem(state, action) {
       const id = action.payload;
       const existingItem = state.cartItems.find((item) => item.id === id);
@@ -57,15 +77,14 @@ const cartSlice = createSlice({
           existingItem.totalPrice - Number(existingItem.price)
           
         );
+        setItemLocal(state.cartItems.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity )
        
       }
-      state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity),
-        0
-      );
-     
+      
     },
-    // delete item
+    // xóa item
     deleteItem(state, action) {
       const id = action.payload;
       const existingItem = state.cartItems.find((item) => item.id === id);
@@ -81,9 +100,14 @@ const cartSlice = createSlice({
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
+      setItemLocal(
+      state.cartItems.map((item) => item),
+      state.totalAmount,
+      state.totalQuantity)
     },
-  },
-});
+   },
+  }
+);
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;
