@@ -99,9 +99,7 @@ const Header =(props) => {
 
             <span className="user">     
              <Link to ='/login'> <i class="ri-user-line"></i></Link>
-             <ul className="dropdown-menu-nav" id ="user-menu-nav">
-              <li></li>
-             </ul>
+            
              </span>
              
 
