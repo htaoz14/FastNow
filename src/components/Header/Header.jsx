@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect , useState } from "react";
+import useAuth from '../../custom-hooks/useAuth'
 
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.jpg";
@@ -19,15 +20,13 @@ const nav__links = [
     path: "/foods",
   },
   {
-    display: "About",
-    path: "/ve-chung-toi",
+    display: "My Order",
+    path: "/cart ",
   },
-  {display : "Contact",
-  path : "/lien-he"
-  },
+  
 ];
 
-const Header = () => {
+const Header =(props) => {
   const menuRef = useRef(null);
 
   const headerRef = useRef(null);
@@ -60,7 +59,10 @@ const Header = () => {
   }, []);
 
   
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
   return (
+    <>
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
@@ -95,11 +97,13 @@ const Header = () => {
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
-            <span className="user">
-              <Link to="/login">
-                <i class="ri-user-line"></i>
-              </Link>
-            </span>
+            <span className="user">     
+             <Link to ='/login'> <i class="ri-user-line"></i></Link>
+             <ul className="dropdown-menu-nav" id ="user-menu-nav">
+              <li></li>
+             </ul>
+             </span>
+             
 
             <span className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>
@@ -108,6 +112,7 @@ const Header = () => {
         </div>
       </Container>
     </header>
+    </>
   );
 };
 

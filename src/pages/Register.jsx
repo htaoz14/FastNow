@@ -1,60 +1,87 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate ,  } from "react-router-dom";
+import  Loader from '../components/Loader/Loader'
+import {auth} from '../firebase/config'
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {ToastContainer,toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-  const signupNameRef = useRef();
-  const signupPasswordRef = useRef();
-  const signupEmailRef = useRef();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cPassword, setCPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
-  const submitHandler = (e) => {
+  const registerUser = (e) => {
     e.preventDefault();
-  };
+    if (password !== cPassword) {
+      return toast.error("Password không giống nhau");
+    }
+    setIsLoading(true);
 
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        setIsLoading(false);
+        toast.success("Đăng kí thành công...");
+        setTimeout(() => {navigate("/login")},1404);
+      })
+      .catch((error) => {
+        toast.error("Tài khoản đã tồn tại vui lòng sử dụng tài khoản khác....");
+        setIsLoading(false);
+      });
+  };
   return (
-    <Helmet title="Signup">
-      <CommonSection title="Signup" />
+    <>
+    <ToastContainer/>
+    {isLoading && <Loader />}
+    <Helmet title="Đăng kí ">
+      <CommonSection title="Đăng kí" />
       <section>
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitHandler}>
+              <form className="form mb-5" onSubmit={registerUser} >
+              
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="Full name"
-                    required
-                    ref={signupNameRef}
-                  />
-                </div>
-                <div className="form__group">
-                  <input
-                    type="email"
                     placeholder="Email"
-                    required
-                    ref={signupEmailRef}
+                    required value = {email} onChange = {(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="password"
                     placeholder="Password"
-                    required
-                    ref={signupPasswordRef}
+                    required value = {password} onChange = {(e) => setPassword(e.target.value)}
                   />
                 </div>
+                <div className="form__group">
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    required value={cPassword} onChange = {(e) => setCPassword(e.target.value)}
+                    
+                  />
+                </div>
+              
                 <button type="submit" className="addToCart__btn">
-                  Sign Up
+                  Đăng kí
                 </button>
               </form>
-              <Link to="/login">Already have an account? Login</Link>
+              <Link to="/login">Bạn đã có tài khoản? Đăng nhập ngay</Link>
             </Col>
           </Row>
         </Container>
       </section>
     </Helmet>
+    </>
   );
 };
 

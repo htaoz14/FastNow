@@ -1,54 +1,83 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from '../firebase/config'
+import {ToastContainer,toast} from 'react-toastify'
+import Loader from "../components/Loader/Loader";
+
+
 
 const Login = () => {
-  const loginNameRef = useRef();
-  const loginPasswordRef = useRef();
-
-  const submitHandler = (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  
+  const loginUser = async(e) => {
     e.preventDefault();
-  };
+    setIsLoading(true);
+    try {
+    const userCredential= await signInWithEmailAndPassword(auth, email, password)
+    
+    const user = userCredential.user;
+    console.log(user)
+    setIsLoading(false);
+    toast.success("Đăng nhập thành công...")
+    setTimeout(() => {navigate("/home")},1404);
+    
+      } catch (error)  {
+        setIsLoading(false);
+        toast.error("Tài khoản hoặc mật khẩu không chính xác vui lòng thử lại...");
+      }
+    }
+  
+  
+
 
   return (
-    <Helmet title="Login">
-      <CommonSection title="Login" />
+    <> <ToastContainer/>
+     {isLoading && <Loader />}
+    <Helmet title="Đăng nhập">
+      <CommonSection title="Đăng nhập" />
       <section>
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitHandler}>
+              <form className="form mb-5" onSubmit={loginUser}>
                 <div className="form__group">
                   <input
-                    type="email"
+                    type="text"
                     placeholder="Email"
-                    required
-                    ref={loginNameRef}
+                    required value = {email} onChange = {(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                    ref={loginPasswordRef}
+                   type="password"
+                   placeholder="Password"
+                   required value = {password} onChange = {(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <button type="submit" className="addToCart__btn">
                   Login
                 </button>
+        
+                
               </form>
               <Link to="/register">
-                Don't have an account? Create an account
+                Bạn chưa có tài khoản? Đăng kí ngay
               </Link>
             </Col>
           </Row>
         </Container>
       </section>
     </Helmet>
-  );
+  ;
+  </>
+  )
 };
 
 export default Login;

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../styles/checkout.css";
 const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-  const shippingCost = 30;
+  const shippingCost = 0;
   const totalAmount = cartTotalAmount + shippingCost;
 
   const [enterName, setEnterName] = useState("");
@@ -39,7 +39,7 @@ const Checkout = () => {
         <Container>
           <Row>
             <Col lg="8" md="6">
-              <h6 className="mt-4">Shipping Address</h6>
+              <h6 className="mt-4">Địa chỉ giao hàng</h6>
               <form className="checkout__form" onSubmit={submitHandler}>
                 <div className="form__group">
                   <input
@@ -83,21 +83,21 @@ const Checkout = () => {
                     onChange={(e) => setPostalCode(e.target.value)}
                   />
                 </div>
-                <button type="submit" className="addToCart__btn">Payment</button>
+                <button type="submit" className="addToCart__btn">Thanh toán</button>
               </form>
               
             </Col>
             <Col lg="4" md="6">
               <div className="checkout__bill">
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Subtotal: $<span>{cartTotalAmount}</span>
+                  Tổng cộng: <span>{cartTotalAmount}₫</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Shipping: $<span>{shippingCost}</span>
+                  Phí giao hàng: Free<span>{shippingCost}₫</span>
                 </h6>
                 <div className="checkout__total">
                   <h5 className="d-flex align-items-center justify-content-between">
-                    Total: <span>${totalAmount}</span>
+                    Thành tiền: <span>{totalAmount}₫</span>
                   </h5>
                 </div>
               </div>

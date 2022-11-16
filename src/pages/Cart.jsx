@@ -14,22 +14,22 @@ const Cart = () => {
 
   return (
     <Helmet title="Cart">
-      <CommonSection title="Your Cart" />
+      <CommonSection title="Giỏ hàng của bạn" />
       <section>
         <Container>
           <Row>
             <Col lg="12">
               {cartItems.length === 0 ? (
-                <h5 className="text-center">Your cart is empty</h5>
+                <h5 className="text-center">Không có sản phẩm nào trong giỏ hàng</h5>
               ) : (
                 <table className="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Image</th>
-                      <th>Product Title</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Delete</th>
+                      <th>img</th>
+                      <th>Tên món ăn</th>
+                      <th>Giá</th>
+                      <th>Số lượng</th>
+                      <th>Xóa</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -40,7 +40,7 @@ const Cart = () => {
                 </table>
               )}
               <div className="mt-4">
-                <h6>Tổng tiền: <span className="cart__subtotal">${totalAmount}</span></h6>
+                <h6>Tổng tiền: <span className="cart__subtotal">{totalAmount}₫</span></h6>
                 <p>Thuế và phí vận chuyển sẽ được tính khi thanh toán</p>
                 <div className="cart__page-btn">
                   <button className="addToCart__btn me-4">
@@ -70,8 +70,8 @@ const Tr = (props) => {
         <img src={image01} alt="" />
       </td>
       <td className="text-center">{title}</td>
-      <td className="text-center">${price}</td>
-      <td className="text-center">{quantity}px</td>
+      <td className="text-center">{price}₫</td>
+      <td className="text-center">{quantity}x</td>
       <td className="text-center cart__item-del" onClick={deleteItem}>
         <i class="ri-delete-bin-line"></i>
       </td>

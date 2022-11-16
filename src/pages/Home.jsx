@@ -181,28 +181,28 @@ const Home = () => {
             <Col lg="12">
               <div className="food__category d-flex align-items-center gap-4 justify-content-center">
                 <button
-                  className={`all__btn ${category === "ALL" ? "foodBtnActive" : ""}`}
+                  className={`all__btn {category === "ALL" ? "foodBtnActive" : ""}₫`}
                   onClick={() => setCategory("ALL")}
                 >
                   All
                 </button>
                 <button
                   onClick={() => setCategory("BURGER")}
-                  className={`d-flex align-items-center gap-2 ${category === "BURGER" ? "foodBtnActive" : ""}`}
+                  className={`d-flex align-items-center gap-2 {category === "BURGER" ? "foodBtnActive" : ""}₫`}
                 >
                   <img src={foodCategoryImg01} alt="" />
                   Burger
                 </button>
                 <button
                   onClick={() => setCategory("PIZZA")}
-                  className={`d-flex align-items-center gap-2 ${category === "PIZZA" ? "foodBtnActive" : ""}`}
+                  className={`d-flex align-items-center gap-2 {category === "PIZZA" ? "foodBtnActive" : ""}₫`}
                 >
                   <img src={foodCategoryImg02} alt="" />
                   Pizza
                 </button>
                 <button
                   onClick={() => setCategory("BREAD")}
-                  className={`d-flex align-items-center gap-2 ${category === "BREAD" ? "foodBtnActive" : ""}`}
+                  className={`d-flex align-items-center gap-2 {category === "BREAD" ? "foodBtnActive" : ""}₫`}
                 >
                   <img src={foodCategoryImg03} alt="" />
                   Bread

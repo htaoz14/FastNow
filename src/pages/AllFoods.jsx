@@ -32,14 +32,15 @@ const AllFoods = () => {
  
 
   return (
-    <Helmet title="All Foods">
-      <CommonSection title="All Foods" />
+    <>
+    <Helmet title="AllFoods">
+      <CommonSection title="Tất cả món ăn" />
 
       <section>
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="6" xs='12'>
-              <div className="search__widget d-flex align-items-center justify-content-between">
+            <Col lg="12" md="12" sm="12" xs='12'>
+              <div className="search__widget d-flex align-items-center justify-content-between mb-4">
                 <input
                   type="text"
                   placeholder="Tìm kiếm món ăn của bạn"
@@ -51,15 +52,7 @@ const AllFoods = () => {
                 </span>
               </div>
             </Col>
-            <Col lg="6" md="6" sm="6" xs='12' className="mb-5">
-              <div className="sorting__widget text-end">
-                <select className="w-50">
-                  <option value="">Default</option>
-                  <option value="high-price">High Price</option>
-                  <option value="low-price">Low Price</option>
-                </select>
-              </div>
-            </Col>
+            
 
             {displayPage.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
@@ -80,6 +73,7 @@ const AllFoods = () => {
         </Container>
       </section>
     </Helmet>
+    </>
   );
 };
 

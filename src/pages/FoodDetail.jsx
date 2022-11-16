@@ -100,13 +100,13 @@ const FoodDetail = () => {
             <Col lg="12">
               <div className="tabs d-flex align-items-center gap-3 py-2">
                 <h6
-                  className={`${tab === "desc" ? "tab__active" : ""}`}
+                  className={`{tab === "desc" ? "tab__active" : ""}₫`}
                   onClick={() => setTab("desc")}
                 >
                   Mổ tả món ăn
                 </h6>
                 <h6
-                  className={`${tab === "rev" ? "tab__active" : ""}`}
+                  className={`{tab === "rev" ? "tab__active" : ""}₫`}
                   onClick={() => setTab("rev")}
                 >
                   Đánh giá

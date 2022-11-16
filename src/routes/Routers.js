@@ -8,7 +8,6 @@ import AllFoods from '../pages/AllFoods'
 import FoodDetails from '../pages/FoodDetail'
 import Cart from '../pages/Cart'
 import Checkout from '../pages/Checkout'
-import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 
@@ -22,7 +21,7 @@ const Routers = () => {
     <Route path='/checkout' element={<Checkout/>} />
     <Route path='/login' element={<Login/>} />
     <Route path='/register' element={<Register/>} />
-    <Route path='/contact' element={<Contact/>} />
+    
   </Routes>
 }
 

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 // 
 const items = localStorage.getItem('cartItems') != null ? JSON.parse(
   localStorage.getItem('cartItems')) : []
@@ -48,7 +49,9 @@ const cartSlice = createSlice({
           quantity: 1,
           totalPrice: newItem.price,
         })
-        alert("Thêm vào giỏ hàng thành công");
+        alert("Thêm vào giỏ hàng thành công"); 
+       
+       
       } else {
         existingItem.quantity++;
         existingItem.totalPrice =
@@ -79,10 +82,12 @@ const cartSlice = createSlice({
         );
         setItemLocal(state.cartItems.map((item) => item),
         state.totalAmount,
-        state.totalQuantity )
+        state.totalQuantity
+        )
+
        
       }
-      
+     
     },
     // xóa item
     deleteItem(state, action) {
