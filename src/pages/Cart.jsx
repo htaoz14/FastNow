@@ -40,7 +40,7 @@ const Cart = () => {
                 </table>
               )}
               <div className="mt-4">
-                <h6>Tổng tiền: <span className="cart__subtotal">{totalAmount}₫</span></h6>
+                <h6>Tạm tính: <span className="cart__subtotal">{totalAmount}₫</span></h6>
                 <p>Thuế và phí vận chuyển sẽ được tính khi thanh toán</p>
                 <div className="cart__page-btn">
                   <button className="addToCart__btn me-4">

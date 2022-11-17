@@ -79,8 +79,24 @@
   z-index: 9999;
 }
 
+.user_profile{
+    z-index: 9999;
+    position: absolute;
+    line-height: 30px;
+    top: 60%;
+    padding: 5px;
+    align-content: center;
+    flex-direction: column;
+    border : none;
+    cursor:pointer;
+    right :60px;
+    width: 100px;
+    display :none;
 
-
+}
+.show_userProfile{
+  display : block;
+}
 @media only screen and (max-width: 992px) {
   .logo img {
     width: calc(100% - 70%);
@@ -149,6 +165,25 @@
     z-index: 99;
     display: none;
   }
+}
+.profile img{
+  width :35px;
+  height:35px;
+  cursor :pointer;
+  border-radius:50%;
+}
+.profile_actions{
+line-height: 25px;
+position: absolute;
+top: 75px;
+display:none;
+}
+.show_profileActions{
+  display : block;
+}
+.
+.profile_actions .show_profileActions span {
+  cursor :pointer;
 }
 
 @media only screen and (max-width: 768px) {

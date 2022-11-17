@@ -97,7 +97,7 @@ const products = [
 
   {
     id: "07",
-    title: "Pizza xúc xích hầm",
+    title: "Pizza xúc xích",
     price: 115000,
     image01: product_02_image_02,
     image02: product_02_image_01,
@@ -145,7 +145,7 @@ const products = [
 
   {
     id: "11",
-    title: "Bánh mì ngũ cốc  ",
+    title: "Bánh mì bơ sữa  ",
     price: 69000,
     image01: product_06_image_01,
     image02: product_06_image_02,
@@ -157,7 +157,7 @@ const products = [
 
   {
     id: "12",
-    title: "Bánh mì gối ",
+    title: "Bánh mì kem ",
     price: 25000,
     image01: product_06_image_02,
     image02: product_06_image_01,

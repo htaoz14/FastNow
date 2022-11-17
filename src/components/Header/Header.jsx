@@ -1,14 +1,18 @@
 import React, { useRef, useEffect , useState } from "react";
 import useAuth from '../../custom-hooks/useAuth'
-
-import { Container } from "reactstrap";
+import {signOut} from 'firebase/auth'
+import {auth} from "../../firebase/config"
+import { Container} from "reactstrap";
 import logo from "../../assets/images/res-logo.jpg";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link , useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
+import userIcon from '../../assets/images/user-icon.png'
 import { cartUiActions } from "../../store/shopping-cart/CartUiSlice";
+import Loader from '../Loader/Loader'
+import {monian} from 'firebase/m'
 
 import "../../styles/header.css";
+import { toast,ToastContainer } from "react-toastify";
 
 const nav__links = [
   {
@@ -26,8 +30,13 @@ const nav__links = [
   
 ];
 
-const Header =(props) => {
+const Header =() => {
+  const profileActionRef = useRef(null)
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
   const menuRef = useRef(null);
+  const {currentUser} = useAuth()
 
   const headerRef = useRef(null);
 
@@ -57,12 +66,24 @@ const Header =(props) => {
 
     return () => window.removeEventListener("scroll");
   }, []);
+const tonggleProfileActions = () => profileActionRef.current.classList.toggle('show_profileActions')
+const logOut = () => {
+  signOut(auth)
+  .then(() => {
+    setIsLoading(false);
+    toast.success('Đăng xuất thành công')
+    setTimeout(() => {navigate("/")},1404);
+  })
+  .catch(erorr => {
+    toast.error("error.message")
 
+  })
+}
   
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  
   return (
-    <>
+    <> <ToastContainer/>
+    {isLoading && <Loader />}
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
@@ -97,10 +118,27 @@ const Header =(props) => {
               <span className="cart__badge">{totalQuantity}</span>
             </span>
 
-            <span className="user">     
-             <Link to ='/login'> <i class="ri-user-line"></i></Link>
+            <div className="profile" >
+            <img 
+            whiteTap ={{scale : 1.2}} 
+            src = {currentUser ? currentUser.photoURL :userIcon} alt = "imgUser" 
+            onClick={tonggleProfileActions} />    
+            </div>
+            <div className="profile_actions"
+            ref ={profileActionRef}
+            onClick={tonggleProfileActions}>
+              {
+                currentUser ?( <span style ={{cursor :"pointer"}} onClick={logOut}>Đăng xuất</span> ): <div>
+                  <Link to ="/login">Đăng nhập</Link>
+                </div>
+              }
+            </div>
+           
+             
+           
+             
             
-             </span>
+            
              
 
             <span className="mobile__menu" onClick={toggleMenu}>

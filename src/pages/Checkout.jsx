@@ -13,9 +13,9 @@ const Checkout = () => {
   const [enterName, setEnterName] = useState("");
   const [enterEmail, setEnterEmail] = useState("");
   const [enterNumber, setEnterNumber] = useState("");
-  const [enterCountry, setEnterCountry] = useState("");
+  const [enterCountry, setEnterCountry ] = useState("");
   const [enterCity, setEnterCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
+  const [enterInfodes,setenterInfodes] = useState("");
 
   const shippingInfo = [];
   const submitHandler = (e) => {
@@ -26,7 +26,7 @@ const Checkout = () => {
       phone: enterNumber,
       country: enterCountry,
       city: enterCity,
-      postalCode: postalCode,
+      infodes: enterInfodes,
     };
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
@@ -44,43 +44,43 @@ const Checkout = () => {
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="Enter your name"
+                    placeholder="Nhập tên của bạn"
                     onChange={(e) => setEnterName(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Nhập email của bạn"
                     onChange={(e) => setEnterEmail(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="number"
-                    placeholder="Phone number"
+                    placeholder="Số điện thoại"
                     onChange={(e) => setEnterNumber(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="Country"
-                    onChange={(e) => setEnterCountry(e.target.value)}
-                  />
-                </div>
-                <div className="form__group">
-                  <input
-                    type="text"
-                    placeholder="City"
+                    placeholder="Thành phố"
                     onChange={(e) => setEnterCity(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
                   <input
+                    type="text"
+                    placeholder="Quân/Huyện"
+                    onChange={(e) => setEnterCountry(e.target.value)}
+                  />
+                </div>
+                <div className="form__group">
+                  <input
                     type="number"
-                    placeholder="Postal code"
-                    onChange={(e) => setPostalCode(e.target.value)}
+                    placeholder="Thêm thông tin để shipper dễ dàng tìm đường"
+                    onChange={(e) => setenterInfodes(e.target.value)}
                   />
                 </div>
                 <button type="submit" className="addToCart__btn">Thanh toán</button>
@@ -90,14 +90,14 @@ const Checkout = () => {
             <Col lg="4" md="6">
               <div className="checkout__bill">
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Tổng cộng: <span>{cartTotalAmount}₫</span>
+                  Tạm tính: <span>{cartTotalAmount}₫</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
                   Phí giao hàng: Free<span>{shippingCost}₫</span>
                 </h6>
                 <div className="checkout__total">
                   <h5 className="d-flex align-items-center justify-content-between">
-                    Thành tiền: <span>{totalAmount}₫</span>
+                  Tổng cộng  : <span>{totalAmount}₫</span>
                   </h5>
                 </div>
               </div>

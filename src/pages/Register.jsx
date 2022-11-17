@@ -3,38 +3,68 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link, useNavigate ,  } from "react-router-dom";
-import  Loader from '../components/Loader/Loader'
-import {auth} from '../firebase/config'
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import  Loader from '../components/Loader/Loader';
+import {auth} from '../firebase/config';
+import {storage} from '../firebase/config';
+import { setDoc,doc } from "firebase/firestore";
+import {db} from '../firebase/config'
+import { createUserWithEmailAndPassword , updateProfile } from "firebase/auth";
+import { getDownloadURL, ref ,uploadBytesResumable} from 'firebase/storage'
 import {ToastContainer,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
+  const [file,setFile] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
-  const registerUser = (e) => {
+  const registerUser = async (e) => {
     e.preventDefault();
     if (password !== cPassword) {
       return toast.error("Password không giống nhau");
     }
     setIsLoading(true);
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        setIsLoading(false);
-        toast.success("Đăng kí thành công...");
-        setTimeout(() => {navigate("/login")},1404);
-      })
-      .catch((error) => {
+  try {
+     const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+    const user = userCredential.user;
+    const storageRef = ref(storage, `images/${Date.now()}`)
+    const uploadTask = uploadBytesResumable(storageRef,file) 
+        
+    uploadTask.on(
+          (error) => {
+          toast.error(error.massage)
+        },
+        ()=>{
+            getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL)=>{
+              // update user
+             await updateProfile(user,{
+                photoURL : downloadURL,
+              });
+              //store user data in firebase database
+              await setDoc(doc(db,'user',user.uid),{
+                uid :user.uid,
+                email,
+                photoURL : downloadURL,
+              })
+            })
+          })
+          console.log(user);
+          setIsLoading(false);
+          toast.success("Đăng kí thành công..."); 
+          setTimeout(() => {navigate("/login")},1404);
+        } catch
+          (error) {
         toast.error("Tài khoản đã tồn tại vui lòng sử dụng tài khoản khác....");
         setIsLoading(false);
-      });
+      };
   };
   return (
     <>
@@ -70,6 +100,14 @@ const Register = () => {
                     
                   />
                 </div>
+                <div className="form__group">
+                  <input
+                    type="file"
+                   onChange = {(e) => setFile(e.target.files[0])}
+                    
+                  />
+                </div>
+              
               
                 <button type="submit" className="addToCart__btn">
                   Đăng kí
