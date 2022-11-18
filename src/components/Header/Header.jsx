@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import userIcon from '../../assets/images/user-icon.png'
 import { cartUiActions } from "../../store/shopping-cart/CartUiSlice";
 import Loader from '../Loader/Loader'
-import {monian} from 'firebase/m'
+
 
 import "../../styles/header.css";
 import { toast,ToastContainer } from "react-toastify";
@@ -70,12 +70,12 @@ const tonggleProfileActions = () => profileActionRef.current.classList.toggle('s
 const logOut = () => {
   signOut(auth)
   .then(() => {
-    setIsLoading(false);
+    setIsLoading(false)
     toast.success('Đăng xuất thành công')
-    setTimeout(() => {navigate("/")},1404);
+    setTimeout(() => {navigate("/")},500);
   })
-  .catch(erorr => {
-    toast.error("error.message")
+  .catch(error => {
+    toast.error(error.message)
 
   })
 }

@@ -30,7 +30,7 @@ const Login = () => {
     
       } catch (error)  {
         setIsLoading(false);
-        toast.error("Tài khoản hoặc mật khẩu không chính xác vui lòng thử lại...");
+        toast.error(error.message);
       }
     }
   

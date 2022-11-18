@@ -62,7 +62,7 @@ const Register = () => {
           setTimeout(() => {navigate("/login")},1404);
         } catch
           (error) {
-        toast.error("Tài khoản đã tồn tại vui lòng sử dụng tài khoản khác....");
+        toast.error(error.message);
         setIsLoading(false);
       };
   };
