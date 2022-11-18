@@ -6,7 +6,7 @@
 - firebase
 - css
 - reactStrap
--...
+- ...
 #### chức năng :
 
 - thêm sản phẩm vào giỏ hàng
@@ -16,7 +16,7 @@
 - đăng kí bằng firebase
 - đặt hàng thành công sẽ xóa dữ liệu trong local
 - tính tiền , số lượng sản phẩm
-.....
+- ....
 
 ####  pages :
 
