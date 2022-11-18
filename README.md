@@ -1,49 +1,33 @@
-## Fast Food
+## Fast now
+## website : [fastnow](https://fast-now.vercel.app/)
+### công nghệ : 
+- rexdux-toolkit
+- Reactjs
+- firebase
+- css
+- reactStrap
+-...
+#### chức năng :
 
-### Features:
+- thêm sản phẩm vào giỏ hàng
+- xóa sản phẩm
+- lọc sản phẩm
+- đăng nhập bằng firebase auth
+- đăng kí bằng firebase
+- đặt hàng thành công sẽ xóa dữ liệu trong local
+- tính tiền , số lượng sản phẩm
+.....
 
----
-
-##### Here's features included in this project
-
-- Add to cart functionality 
-- Shopping cart functionality 
-- Product Filtering functionality 
-- Product page 
-- Cart and checkout page  
-- Login and Register page 
-- Awesome modern minimalist UI
+####  pages :
 
 
-### 
-- Contact page
-- auth user , login
-- confirm user 
-- history order
+- home
+- checkout
+- productDetail
+- Allproduct
+- login
+- register
+- checkout
+- cart
+- .....
 
-
-### Technologies Used:
-
----
-
-1. React.js
-2. Redux Toolkit
-3. ReactStrap
-4. CSS
-
-### How to start?
-
----
-
-##### To start the project along with me just download the start-up file and run available script
-
-```javascript
-// first install all necessary dependencies
-
-npm i
-
-// next run
-
-npm start
-
-```
