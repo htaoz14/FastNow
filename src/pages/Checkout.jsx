@@ -3,12 +3,16 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
-
 import "../styles/checkout.css";
+import { toast } from "react-toastify";
+import { cartActions } from "../store/shopping-cart/cartSlice";
+import { useNavigate } from "react-router-dom";
 const Checkout = () => {
+  const dispatch = useDispatch();
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const shippingCost = 0;
   const totalAmount = cartTotalAmount + shippingCost;
+  const navigate = useNavigate()
 
   const [enterName, setEnterName] = useState("");
   const [enterEmail, setEnterEmail] = useState("");
@@ -16,7 +20,7 @@ const Checkout = () => {
   const [enterCountry, setEnterCountry ] = useState("");
   const [enterCity, setEnterCity] = useState("");
   const [enterInfodes,setenterInfodes] = useState("");
-
+  
   const shippingInfo = [];
   const submitHandler = (e) => {
     e.preventDefault();
@@ -28,8 +32,11 @@ const Checkout = () => {
       city: enterCity,
       infodes: enterInfodes,
     };
+    dispatch(cartActions.clearCart())
+    toast.success('Đặt hàng thành công')
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
+    navigate('/')
   };
 
   return (
@@ -78,12 +85,12 @@ const Checkout = () => {
                 </div>
                 <div className="form__group">
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Thêm thông tin để shipper dễ dàng tìm đường"
                     onChange={(e) => setenterInfodes(e.target.value)}
                   />
                 </div>
-                <button type="submit" className="addToCart__btn">Thanh toán</button>
+                <button type="submit" className="addToCart__btn" >Thanh toán</button>
               </form>
               
             </Col>

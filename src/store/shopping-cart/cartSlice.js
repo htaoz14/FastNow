@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-// 
+// luu vao local
 const items = localStorage.getItem('cartItems') != null ? JSON.parse(
   localStorage.getItem('cartItems')) : []
 
@@ -11,6 +11,7 @@ const totalAmount = localStorage.getItem('totalAmount') != null ? JSON.parse(
 
 const totalQuantity = localStorage.getItem('totalQuantity') != null ? JSON.parse(
         localStorage.getItem('totalQuantity')) : 0;
+
 
 const setItemLocal = (item , totalAmount , totalQuantity ) => {
   localStorage.setItem('cartItems',JSON.stringify(item));
@@ -24,6 +25,7 @@ const initialState = {
   cartItems: items,
   totalQuantity: totalQuantity,
   totalAmount: totalAmount,
+
 };
 
 const cartSlice = createSlice({
@@ -31,6 +33,13 @@ const cartSlice = createSlice({
   initialState: initialState,
 
   reducers: {
+    clearCart(state, action) {
+      state.cartItems = [];
+      state.totalAmount = 0;
+      state.totalQuantity = 0;
+
+      setItemLocal([], 0, 0); // xoa cart luu trong local
+    },
     // thêm item
     addItem(state, action) {
       const newItem = action.payload;

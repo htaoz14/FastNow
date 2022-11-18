@@ -26,7 +26,7 @@ import product_06_image_03 from "../images/bread(3).png";
 const products = [
   {
     id: "01",
-    title: "Burger gà",
+    title: "Burger chicken",
     price: 70000,
     image01: product_01_image_01,
     image02: product_01_image_02,
@@ -38,7 +38,7 @@ const products = [
 
   {
     id: "02",
-    title: "Pizza chay",
+    title: "Pizza",
     price: 80000,
     image01: product_02_image_01,
     image02: product_02_image_02,
@@ -50,7 +50,7 @@ const products = [
 
   {
     id: "03",
-    title: "2x Pizza Phô mai",
+    title: "2x Pizza cheese",
     price: 190000,
     image01: product_03_image_01,
     image02: product_03_image_02,
@@ -62,7 +62,7 @@ const products = [
 
   {
     id: "04",
-    title: "Pizza làn sóng Mecio",
+    title: "Pizza Mecio",
     price: 110000,
     image01: product_04_image_01,
     image02: product_04_image_02,
@@ -74,7 +74,7 @@ const products = [
 
   {
     id: "05",
-    title: "Burger phô mai",
+    title: "Burger cow",
     price: 90000,
     image01: product_05_image_01,
     image02: product_05_image_02,
@@ -85,7 +85,7 @@ const products = [
   },
   {
     id: "06",
-    title: "Burger Phở",
+    title: "Burger Pho",
     price: 110000,
     image01: product_01_image_01,
     image02: product_01_image_02,
@@ -97,7 +97,7 @@ const products = [
 
   {
     id: "07",
-    title: "Pizza xúc xích",
+    title: "Pizza hotdog",
     price: 115000,
     image01: product_02_image_02,
     image02: product_02_image_01,
@@ -109,7 +109,7 @@ const products = [
 
   {
     id: "08",
-    title: "Pizza cá ngừ",
+    title: "Pizza tuna",
     price: 110000,
     image01: product_03_image_02,
     image02: product_03_image_01,
@@ -121,7 +121,7 @@ const products = [
 
   {
     id: "09",
-    title: "Pizza kim chi  ",
+    title: "Pizza kimchi  ",
     price: 100000,
     image01: product_04_image_02,
     image02: product_04_image_01,
@@ -133,7 +133,7 @@ const products = [
 
   {
     id: "10",
-    title: "Bugger Bò kobe",
+    title: "Bugger cowkobe",
     price: 350000,
     image01: product_05_image_02,
     image02: product_05_image_01,
@@ -145,7 +145,7 @@ const products = [
 
   {
     id: "11",
-    title: "Bánh mì bơ sữa  ",
+    title: "Bread hotdog  ",
     price: 69000,
     image01: product_06_image_01,
     image02: product_06_image_02,
@@ -157,7 +157,7 @@ const products = [
 
   {
     id: "12",
-    title: "Bánh mì kem ",
+    title: "Bread cream ",
     price: 25000,
     image01: product_06_image_02,
     image02: product_06_image_01,
@@ -169,7 +169,7 @@ const products = [
 
   {
     id: "13",
-    title: "Bánh mì dài",
+    title: "Bread",
     price: 15000,
     image01: product_06_image_03,
     image02: product_06_image_02,

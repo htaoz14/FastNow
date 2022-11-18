@@ -9,8 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import userIcon from '../../assets/images/user-icon.png'
 import { cartUiActions } from "../../store/shopping-cart/CartUiSlice";
 import Loader from '../Loader/Loader'
-
-
 import "../../styles/header.css";
 import { toast,ToastContainer } from "react-toastify";
 
@@ -37,6 +35,7 @@ const Header =() => {
 
   const menuRef = useRef(null);
   const {currentUser} = useAuth()
+  console.log("user : ", currentUser)
 
   const headerRef = useRef(null);
 
@@ -50,7 +49,7 @@ const Header =() => {
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
-
+// xử lí khi cuộn xuống
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -67,6 +66,7 @@ const Header =() => {
     return () => window.removeEventListener("scroll");
   }, []);
 const tonggleProfileActions = () => profileActionRef.current.classList.toggle('show_profileActions')
+// dang xuat log ve trang chu
 const logOut = () => {
   signOut(auth)
   .then(() => {
@@ -119,15 +119,14 @@ const logOut = () => {
             </span>
 
             <div className="profile" >
-            <img 
-            whiteTap ={{scale : 1.2}} 
-            src = {currentUser ? currentUser.photoURL :userIcon} alt = "imgUser" 
+            <img // nếu đăng nhập thì trả về photoUrl còn không thì trả về icon
+            src = {currentUser ? currentUser.photoURL :userIcon} alt = "avatar" 
             onClick={tonggleProfileActions} />    
             </div>
             <div className="profile_actions"
             ref ={profileActionRef}
             onClick={tonggleProfileActions}>
-              {
+              { // nếu  đăng nhập được thì sẽ có đăng xuất 
                 currentUser ?( <span style ={{cursor :"pointer"}} onClick={logOut}>Đăng xuất</span> ): <div>
                   <Link to ="/login">Đăng nhập</Link>
                 </div>

@@ -26,7 +26,7 @@ const Login = () => {
     console.log(user)
     setIsLoading(false);
     toast.success("Đăng nhập thành công...")
-    setTimeout(() => {navigate("/home")},1404);
+    setTimeout(() => {navigate("/home")},500);
     
       } catch (error)  {
         setIsLoading(false);

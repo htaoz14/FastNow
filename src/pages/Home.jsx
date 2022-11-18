@@ -96,8 +96,8 @@ const Home = () => {
               <div className="hero__content">
                 <h5 className="mb-3"> Order 1 cách dễ dàng</h5>
                 <h1 className="mb-4 hero__title">
-                  <span>Đói ư?</span> Đợi chút <br /> đặt ngay
-                  <span> cho nóng</span>
+                  <span>Hungry?</span> Call me <br/> order now
+                  <span> </span>
                 </h1>
                 <p>
                   Nhìn có vẻ là tôi suy tư nhưng đến 95% suy nghĩ não bộ của tôi là ăn gì trưa nay.
