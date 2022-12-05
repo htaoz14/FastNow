@@ -40,8 +40,8 @@ const Login = () => {
   return (
     <> <ToastContainer/>
      {isLoading && <Loader />}
-    <Helmet title="Đăng nhập">
-      <CommonSection title="Đăng nhập" />
+    <Helmet title="Sig In">
+      <CommonSection title="Sig In" />
       <section>
         <Container>
           <Row>
@@ -69,7 +69,7 @@ const Login = () => {
                 
               </form>
               <Link to="/register">
-                Bạn chưa có tài khoản? Đăng kí ngay
+              Do not have an account? Sign up now
               </Link>
             </Col>
           </Row>

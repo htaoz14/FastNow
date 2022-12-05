@@ -74,8 +74,8 @@ const Register = () => {
     <>
       <ToastContainer />
       {isLoading && <Loader />}
-      <Helmet title="Đăng kí ">
-        <CommonSection title="Đăng kí" />
+      <Helmet title="Sig up ">
+        <CommonSection title="Sig up" />
         <section>
           <Container>
             <Row>
@@ -116,10 +116,10 @@ const Register = () => {
                   </div>
 
                   <button type="submit" className="addToCart__btn">
-                    Đăng kí
+                    Sig Up
                   </button>
                 </form>
-                <Link to="/login">Bạn đã có tài khoản? Đăng nhập ngay</Link>
+                <Link to="/login">Do you already have an account? log in now</Link>
               </Col>
             </Row>
           </Container>

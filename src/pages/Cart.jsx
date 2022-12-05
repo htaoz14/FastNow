@@ -19,16 +19,16 @@ const Cart = () => {
           <Row>
             <Col lg="12">
               {cartItems.length === 0 ? (
-                <h5 className="text-center">Không có sản phẩm nào trong giỏ hàng</h5>
+                <h5 className="text-center">There are no products in the cart</h5>
               ) : (
                 <table className="table table-bordered">
                   <thead>
                     <tr>
                       <th>img</th>
-                      <th>Tên món ăn</th>
-                      <th>Giá</th>
-                      <th>Số lượng</th>
-                      <th>Xóa</th>
+                      <th>Name</th>
+                      <th>Prince</th>
+                      <th>Amount</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -39,14 +39,14 @@ const Cart = () => {
                 </table>
               )}
               <div className="mt-4">
-                <h6>Tạm tính: <span className="cart__subtotal">{totalAmount}₫</span></h6>
-                <p>Thuế và phí vận chuyển sẽ được tính khi thanh toán</p>
+                <h6>total: <span className="cart__subtotal">{totalAmount}$</span></h6>
+                <p>Taxes and shipping charges will be charged upon payment</p>
                 <div className="cart__page-btn">
                   <button className="addToCart__btn me-4">
-                      <Link to='/foods'>Tiếp tục mua</Link>
+                      <Link to='/foods'>Continue to buy</Link>
                   </button>
                   <button className="addToCart__btn">
-                      <Link to='/checkout'>Tiếp tục checkout</Link>
+                      <Link to='/checkout'>Checkout</Link>
                   </button>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const Tr = (props) => {
         <img src={image01} alt="" />
       </td>
       <td className="text-center">{title}</td>
-      <td className="text-center">{price}₫</td>
+      <td className="text-center">{price}$</td>
       <td className="text-center">{quantity}x</td>
       <td className="text-center cart__item-del" onClick={deleteItem}>
         <i class="ri-delete-bin-line"></i>

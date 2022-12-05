@@ -19,11 +19,11 @@ const categoryData = [
     imgUrl: categoryImg02,
   },
   {
-    display: "Mì ý",
+    display: "Spaghetti",
     imgUrl: categoryImg03,
   },
   {
-    display: "Thịt Bò",
+    display: "beef",
     imgUrl: categoryImg04,
   },
 ];

@@ -38,12 +38,11 @@
   background: #df2020 ;
   border: 1px solid #df2020 !important;
   transition: 0.3s;
+  color : #fff;
+ 
+ 
+  
 }
-
-.all__foods-btn a {
-  color: #fff !important; 
-}
-
 .hero__service p{
     color: #212245;
     font-weight: 600;

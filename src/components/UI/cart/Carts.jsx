@@ -9,7 +9,11 @@ import "../../../styles/shopping-cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../../../store/shopping-cart/CartUiSlice";
 
-const Carts = () => {
+const Carts = (
+  { showCartSideBar
+
+  }
+) => {
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartItems);
 
@@ -19,6 +23,13 @@ const Carts = () => {
     dispatch(cartUiActions.toggle());
   };
   return (
+    <div
+      className={
+        showCartSideBar === true
+          ? "cart list-group-active"
+          : "cart list-group"
+      }
+    >
     <div className="cart__container">
       <ListGroup className="cart">
         <div className="cart__lose">
@@ -29,7 +40,7 @@ const Carts = () => {
 
         <div className="cart__item-list">
           {cartProducts.length === 0 ? (
-            <h6 className="text-center mt-5">Không có sản phẩm nào trong giỏ hàng</h6>
+            <h6 className="text-center mt-5">There are no products in the cart</h6>
           ) : (
             cartProducts.map((item, index) => (
               <CartItem item={item} key={index} />
@@ -38,13 +49,14 @@ const Carts = () => {
         </div>
         <div className="cart__button d-flex align-items-center justify-content-between">
           <h6>
-            Tạm tính : <span>{subtotalAmount}₫</span>
+          total: <span>{subtotalAmount}$</span>
           </h6>
           <button>
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
       </ListGroup>
+    </div>
     </div>
   );
 };

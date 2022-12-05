@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {toast} from 'react-toastify'
 
 
-// luu vao local
+// save local
 const items = localStorage.getItem('cartItems') != null ? JSON.parse(
   localStorage.getItem('cartItems')) : []
 
@@ -38,15 +39,17 @@ const cartSlice = createSlice({
       state.totalAmount = 0;
       state.totalQuantity = 0;
 
-      setItemLocal([], 0, 0); // xoa cart luu trong local
+      setItemLocal([], 0, 0); // delete data local
     },
-    // thêm item
+    // add item
     addItem(state, action) {
       const newItem = action.payload;
       const existingItem = state.cartItems.find(
         (item) => item.id === newItem.id
       );
       state.totalQuantity++;
+      toast.success('Thêm vào giỏ hàng thành công',{
+      position: toast.POSITION.BOTTOM_RIGHT,})
 
       if (!existingItem) {
         
@@ -58,13 +61,12 @@ const cartSlice = createSlice({
           quantity: 1,
           totalPrice: newItem.price,
         })
-        alert("Thêm vào giỏ hàng thành công"); 
        
        
       } else {
         existingItem.quantity++;
         existingItem.totalPrice =
-          Number(existingItem.totalPrice) + Number(newItem.price);
+        Number(existingItem.totalPrice) + Number(newItem.price);
         
       }
       state.totalAmount = state.cartItems.reduce(
@@ -73,32 +75,43 @@ const cartSlice = createSlice({
       );
       setItemLocal(state.cartItems.map((item) => item),
       state.totalAmount,
-      state.totalQuantity )
+      state.totalQuantity,
+     )
+      
+    
     },
     
-    // giảm item
+    
+    // remove item
     removeItem(state, action) {
       const id = action.payload;
       const existingItem = state.cartItems.find((item) => item.id === id);
       state.totalQuantity--;
+      
       if (existingItem.quantity === 1) {
         state.cartItems = state.cartItems.filter((item) => item.id !== id);
       } else {
         existingItem.quantity--;
         existingItem.totalPrice = Number(
-          existingItem.totalPrice - Number(existingItem.price)
+        existingItem.totalPrice - Number(existingItem.price)
           
-        );
+        )
+      };
+        state.totalAmount = state.cartItems.reduce(
+          (total, item) => total + Number(item.price) * Number(item.quantity),
+          0
+        )
+      ;
         setItemLocal(state.cartItems.map((item) => item),
         state.totalAmount,
         state.totalQuantity
         )
 
        
-      }
+      
      
     },
-    // xóa item
+    // delete item
     deleteItem(state, action) {
       const id = action.payload;
       const existingItem = state.cartItems.find((item) => item.id === id);
@@ -107,7 +120,8 @@ const cartSlice = createSlice({
       
         state.cartItems = state.cartItems.filter((item) => item.id !== id);
         state.totalQuantity = state.totalQuantity - existingItem.quantity;
-        alert("Bạn chắc chắn muốn xóa chứ")
+        toast.success('Đã xóa khỏi giỏ hàng',{
+          position: toast.POSITION.BOTTOM_CENTER,})
       }
 
       state.totalAmount = state.cartItems.reduce(

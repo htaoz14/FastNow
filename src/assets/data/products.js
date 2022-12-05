@@ -27,102 +27,102 @@ const products = [
   {
     id: "01",
     title: "Burger chicken",
-    price: 70000,
+    price: 7,
     image01: product_01_image_01,
     image02: product_01_image_02,
     image03: product_01_image_03,
     category: "Burger",
 
-    desc: " Bạn đang phân vân chất lượng? Bánh của chúng tôi được tạo ra bởi nguyên liệu siêu sạch, tuyển chọn từng ngọn rau, từng túi nước sốt. Bữa trưa không tốn thời gian, chỉ cần 1 chiếc burger căng đầy và chút nước chanh sẽ lấp đầy dạ dày của bạn nhanh chóng. Không ai biết trước được, ăn 1 lần, bạn có thể quên được hương vị của burger gà chẳng?",
+    desc: " Are you wondering about the quality? Our cakes are created with super clean ingredients, selected for each top of vegetables, each bag of sauce. Lunch takes no time, just a filling burger and some lemonade will fill your stomach in no time. No one knows in advance, eating once, you can forget the taste of chicken burger?",
   },
 
   {
     id: "02",
     title: "Pizza",
-    price: 80000,
+    price: 8,
     image01: product_02_image_01,
     image02: product_02_image_02,
     image03: product_02_image_03,
     category: "Pizza",
 
-    desc: "Bạn muốn ăn kiêng , đang ăn chay để healthy hơn nhưng bạn vẫn muốn ăn pizza đừng lo vì món pizza chay này được làm ra để cho bạn thưởng thức . Hãy đặt ngay không cần đắn đo nhé!",
+    desc: "You want to go on a diet, are vegetarian to be healthier but you still want to eat pizza, don't worry because this vegetarian pizza is made for you to enjoy. Order now without hesitation!",
   },
 
   {
     id: "03",
     title: "2x Pizza cheese",
-    price: 190000,
+    price: 9,
     image01: product_03_image_01,
     image02: product_03_image_02,
     image03: product_03_image_03,
     category: "Pizza",
 
-    desc: "Phô mai kết hợp cùng pizza , các bạn đang nuốt nước miếng phải không , thưởng thức ngay không thể bỏ lỡ",
+    desc: "Cheese combined with pizza, you guys are swallowing, right, can't miss it",
   },
 
   {
     id: "04",
     title: "Pizza Mecio",
-    price: 110000,
+    price: 11,
     image01: product_04_image_01,
     image02: product_04_image_02,
     image03: product_04_image_03,
     category: "Pizza",
 
-    desc: "Hương vị đặc trưng Bắc Mĩ sẽ được hòa quyện vào với chiếc pizza mới mẻ này",
+    desc: "Typical North American flavors will be blended with this refreshing pizza",
   },
 
   {
     id: "05",
     title: "Burger cow",
-    price: 90000,
+    price: 9,
     image01: product_05_image_01,
     image02: product_05_image_02,
     image03: product_05_image_03,
     category: "Burger",
 
-    desc: "x2 phô mai có làm bạn xao xuyến , burger đặc trưng của nước Mĩ sẽ được kết hợp vào với nhau tạo nên 1 tuyệt phẩm",
+    desc: "x2 cheese will make you flutter, the typical American burger will be combined together to create a masterpiece",
   },
   {
     id: "06",
     title: "Burger Pho",
-    price: 110000,
+    price: 11,
     image01: product_01_image_01,
     image02: product_01_image_02,
     image03: product_01_image_03,
     category: "Burger",
 
-    desc: "Món ăn được rất nhiều người Việt chào đón đó chính là Burger vị Phở thần thánh,đậm đà của burger và ngọt ngào của phở sẽ  làm chọ bạn thấy nó ngon miệng .",
+    desc: "The dish that is welcomed by many Vietnamese people is the divine Pho Burger, the richness of the burger and the sweetness of the pho will make you feel delicious.",
   },
 
   {
     id: "07",
     title: "Pizza hotdog",
-    price: 115000,
+    price: 15,
     image01: product_02_image_02,
     image02: product_02_image_01,
     image03: product_02_image_03,
     category: "Pizza",
 
-    desc: "1 món ăn truyền thống sẽ cho bạn thấy tại sao pizza lại là đồ ăn nhanh ngon số 1 nước Mỹ",
+    desc: "A traditional dish that will show you why pizza is America's #1 best fast food",
   },
 
   {
     id: "08",
     title: "Pizza tuna",
-    price: 110000,
+    price: 11,
     image01: product_03_image_02,
     image02: product_03_image_01,
     image03: product_03_image_03,
     category: "Pizza",
 
-    desc: "Cá ngừ tươi được kết hợp với pizza tạo ra hương vị mới mẻ khiến bạn không thể nào quên",
+    desc: "Fresh tuna is combined with pizza to create a new taste that you will never forget",
   },
 
   {
     id: "09",
     title: "Pizza kimchi  ",
-    price: 100000,
+    price: 10,
     image01: product_04_image_02,
     image02: product_04_image_01,
     image03: product_04_image_03,
@@ -134,49 +134,49 @@ const products = [
   {
     id: "10",
     title: "Bugger cowkobe",
-    price: 350000,
+    price: 35,
     image01: product_05_image_02,
     image02: product_05_image_01,
     image03: product_05_image_03,
     category: "Burger",
 
-    desc: "Thịt bò thường hả ? không , chúng tôi ăn bò kobe ngon số 1 thế giới không phải bàn cãi",
+    desc: "Regular beef? No, we eat the best kobe beef in the world without a doubt",
   },
 
   {
     id: "11",
     title: "Bread hotdog  ",
-    price: 69000,
+    price: 7,
     image01: product_06_image_01,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Bread",
 
-    desc: "Ngũ cốc cực tốt cho sức khỏe vì nó rất nhiều dinh dưỡng , chiếc bánh mì dành cho nhưng người quan tâm về dinh dưỡng ",
+    desc: "Cereal is extremely good for health because it is very nutritious, bread for those who care about nutrition ",
   },
 
   {
     id: "12",
     title: "Bread cream ",
-    price: 25000,
+    price: 25,
     image01: product_06_image_02,
     image02: product_06_image_01,
     image03: product_06_image_03,
     category: "Bread",
 
-    desc: "Bánh mì thơm ngon nóng hổi được ra lò nhằm phục vụ những thực khách khó tính vì nó hoàn hảo về mọi mặt",
+    desc: "Hot, delicious bread is made. Serving fastidious customers because it's perfect in every way",
   },
 
   {
     id: "13",
     title: "Bread",
-    price: 15000,
+    price: 15,
     image01: product_06_image_03,
     image02: product_06_image_02,
     image03: product_06_image_03,
     category: "Bread",
 
-    desc: "Cá chắc ai cũng trải qua thời kì cầm bánh mì mỗi khi đi học , và nó sẽ được ra lò để cho các bạn thưởng thích hương vị ngày xưa",
+    desc: "I'm sure everyone goes through the process of holding bread every time they go to school, and it will be released for you to enjoy the taste of the old days.",
   },
 ];
 

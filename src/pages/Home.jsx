@@ -31,19 +31,19 @@ import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
   {
-    title: "Giao hàng nhanh chóng",
+    title: "Quick Delivery",
     imgUrl: featureImg01,
-    desc: "Chỉ 15-30p giao hàng kể cả giờ cao điểm",
+    desc: "Only 15-30 minutes delivery even during rush hour",
   },
   {
-    title: "Món ăn nóng hổi",
+    title: "Super Dine In",
     imgUrl: featureImg02,
-    desc: "Chúng tôi sẽ bảo quản thức ăn ngon nhất đến tay bạn",
+    desc: "We will preserve the best food for you",
   },
   {
-    title: "Thưởng thức món ăn",
+    title: "Easy Pick Up",
     imgUrl: featureImg03,
-    desc: "Hãy tận hương món ăn ngon nhé",
+    desc: "Enjoy delicious food",
   },
 ];
 
@@ -94,21 +94,28 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content">
-                <h5 className="mb-3"> Order 1 cách dễ dàng</h5>
+                <h5 className="mb-3">Easy way to make an order</h5>
                 <h1 className="mb-4 hero__title">
-                  <span>Hungry?</span> Call me <br/> order now
-                  <span> </span>
+                <span>HURRY?</span> Just wait <br /> food at
+                  <span> your door</span>
                 </h1>
                 <p>
-                  Nhìn có vẻ là tôi suy tư nhưng đến 95% suy nghĩ não bộ của tôi là ăn gì trưa nay.
+                It looks like I'm thinking, but 95% of what my brain thinks is what to eat for lunch today.
                 </p>
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    Đặt ngay <i class="ri-arrow-right-s-line"></i>
+                  Order now<i class="ri-arrow-right-s-line"></i>
                   </button>
-                  <button className="all__foods-btn">
-                    <Link to="/foods">Tất cả món ngon</Link>
-                  </button>
+                 
+                  
+                 
+                 
+                  <Link to ="/foods" >
+                  <button className="all__foods-btn">See all foods</button> 
+                </Link>
+                 
+                  
+                 
                 </div>
               </div>
               <div className="hero__service d-flex align-items-center gap-5 mt-5">
@@ -122,7 +129,7 @@ const Home = () => {
                   <span className="shipping__icon">
                     <i class="ri-shield-check-line"></i>
                   </span>
-                  100% Thanh toán an toàn
+                  100% Secure payment
                 </p>
               </div>
             </Col>
@@ -143,16 +150,16 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h5 className="feature__subtitle mb-4">Chúng tôi phục vụ những gì?</h5>
-              <h2 className="feature__title">Đặt món và chớp mắt</h2>
+              <h5 className="feature__subtitle mb-4">What we serve?</h5>
+              <h2 className="feature__title">Order and blink</h2>
               <h2 className="feature__title">
-                Chúng tôi <span>sẽ làm cho bạn hài lòng </span>
+                We <span>will make you satisfied</span>
               </h2>
               <p className="mb-1 mt-4 feature-text">
-                Fast Now sự lựa chọn hoàn hảo của bạn
+                Fast Now your perfect choice
               </p>
               <p className="feature-text">
-                Chúng tôi sẽ phục vụ các bạn 1 cách nhanh và tốt nhất
+              We will serve you in the fastest and best way
               </p>
             </Col>
             {featureData.map((item, index) => (
@@ -175,27 +182,27 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2>Menu các món</h2>
+              <h2>Menu</h2>
             </Col>
 
             <Col lg="12">
               <div className="food__category d-flex align-items-center gap-4 justify-content-center">
                 <button
-                  className={`all__btn {category === "ALL" ? "foodBtnActive" : ""}₫`}
+                  className={`all__btn {category === "ALL" ? "foodBtnActive" : ""}$`}
                   onClick={() => setCategory("ALL")}
                 >
                   All
                 </button>
                 <button
                   onClick={() => setCategory("BURGER")}
-                  className={`d-flex align-items-center gap-2 {category === "BURGER" ? "foodBtnActive" : ""}₫`}
+                  className={`d-flex align-items-center gap-2 {category === "BURGER" ? "foodBtnActive" : ""}$`}
                 >
                   <img src={foodCategoryImg01} alt="" />
                   Burger
                 </button>
                 <button
                   onClick={() => setCategory("PIZZA")}
-                  className={`d-flex align-items-center gap-2 {category === "PIZZA" ? "foodBtnActive" : ""}₫`}
+                  className={`d-flex align-items-center gap-2 {category === "PIZZA" ? "foodBtnActive" : ""}$`}
                 >
                   <img src={foodCategoryImg02} alt="" />
                   Pizza
@@ -230,36 +237,36 @@ const Home = () => {
                   Why <span>Fast Now</span>
                 </h2>
                 <p className="testy__treat-desc">
-                  Fast Now ra đời có sự mệnh đáp ứng nhu cầu của khách hàng về đồ ăn nhanh.Những món ăn chất lượng từ khâu chọn lọc tới khâu nấu ăn. Vệ sinh an toàn là thứ đặt lên hằng đầu để cửa hàng uy tín hợ trong mắt thực khách.
+                Fast Now was born with the mission to meet the needs of customers for fast food. Quality dishes from selection to cooking. Hygiene and safety is a top priority for a reputable shop to be in the eyes of diners.
                 </p>
                 <ListGroup className="mt-4">
                   <ListGroupItem style={{backgroundColor : "#fcfcfc"}} className="border-0 ps-0 ">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
                     <i class="ri-checkbox-circle-line"></i>
-                    Thực phẩm tươi ngon
+                    Fresh food
                   </p>
                   <p className="choose__us-desc">
-                    Thực phẩm được lấy mới và sử dụng trong ngày
+                  Food is taken fresh and used within the day
                   </p>
                 </ListGroupItem>
 
                 <ListGroupItem style={{backgroundColor : "#fcfcfc"}} className="border-0 ps-0">
                   <p className="choose__us-title d-flex align-items-center gap-2">
                     <i class="ri-checkbox-circle-line"></i>
-                    Hỗ trợ nhiệt tình thân thiện
+                    Friendly enthusiastic support
                   </p>
                   <p className="choose__us-desc">
-                    Chúng tôi sẵn sàng trả lời mọi câu hỏi thắc mắc của quý khách 
+                  We are ready to answer all your questions
                   </p>
                 </ListGroupItem>
 
                 <ListGroupItem style={{backgroundColor : "#fcfcfc"}} className="border-0 ps-0">
                   <p className="choose__us-title d-flex align-items-center gap-2">
                     <i class="ri-checkbox-circle-line"></i>
-                   Order mọi nơi
+                   Order everywhere
                   </p>
                   <p className="choose__us-desc">
-                    Cửa hàng ship với tốc độ của the Flash nên quý khách không cần chờ đợi quá lâu khi đặt hàng 
+                  The store ships with the speed of the Flash so you don't have to wait too long when ordering
                   </p>
                 </ListGroupItem>
               </ListGroup>
@@ -285,12 +292,12 @@ const Home = () => {
           <Row>
             <Col lg="6" md="6">
               <div className="testimonial">
-                <h5 className="testimonial__subtitle mb-4">Lời chứng thực </h5>
+                <h5 className="testimonial__subtitle mb-4">Testimonials </h5>
                 <h2 className="testimonial__title mb-4">
-                  Những đánh giá của <span>khách hàng</span> đã trải nghiệm
+                What our <span>customers</span> are saying
                 </h2>
                 <p className="testimonial__decs">
-                  Bên dưới là nhưng lời đánh giá nổi bật của những khách hàng ngẫu nhiên :
+                Below are some outstanding reviews from random customers:
                 </p>
 
                 <TestimonialSlider />

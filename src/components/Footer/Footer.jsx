@@ -11,29 +11,31 @@ const Footer = () => {
             <div className="footer__logo text-start">
               <img src={logo} alt="logo" />
               <h5>Fast Now</h5>
-              <p> Ăn là mê – phê khỏi về
+              <p> Order food easily
+
+
               </p>
             </div>
           </Col>
           <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Thời gian mở cửa</h5>
+            <h5 className="footer__title">Open time</h5>
             <ListGroup className="delivery__time-list">
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <span>Thứ hai - Chủ nhật</span>
+                <span>Mon - Sunday</span>
                 <p>10:00 am - 11:00 pm</p>
               </ListGroupItem>
 
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <span>Chủ Nhật và các ngày lễ</span>
-                <p>Phục vụ 24/24h</p>
+                <span>Sunday and Holiday</span>
+                <p>service :24/24h</p>
               </ListGroupItem>
             </ListGroup>
           </Col>
           <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Địa chỉ</h5>
+            <h5 className="footer__title">Address</h5>
             <ListGroup className="delivery__time-list">
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <span>Địa chỉ: 48 Tố hữu - Nam từ liêm - Hà nội</span>
+                <span>48 To huu - Nam tu liem - Ha noi</span>
               </ListGroupItem>
               <ListGroupItem className="delivery__time-item border-0 ps-0">
                 <span>Phone: 012.345.6789</span>
@@ -45,17 +47,17 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg="3" md="4" sm="6">
-            <h5 className="footer__title">Chính sách</h5>
+            <h5 className="footer__title">Store Policy</h5>
             <ListGroup className="delivery__time-list">
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <span>Chính sách hoạt động</span>
+                <span>Operation Policy</span>
               </ListGroupItem>
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <span>Chính sách và quy định</span>
+                <span>Policies and regulations</span>
               </ListGroupItem>
 
               <ListGroupItem className="delivery__time-item border-0 ps-0">
-                <span>Chính sách bảo mật</span>
+                <span>Privacy Policy</span>
               </ListGroupItem>
             </ListGroup>
             

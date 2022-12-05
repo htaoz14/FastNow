@@ -49,7 +49,7 @@ const Header =() => {
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
-// xử lí khi cuộn xuống
+// srcoll
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -66,7 +66,7 @@ const Header =() => {
     return () => window.removeEventListener("scroll");
   }, []);
 const tonggleProfileActions = () => profileActionRef.current.classList.toggle('show_profileActions')
-// dang xuat log ve trang chu
+// logOut => home
 const logOut = () => {
   signOut(auth)
   .then(() => {
@@ -119,28 +119,20 @@ const logOut = () => {
             </span>
 
             <div className="profile" >
-            <img // nếu đăng nhập thì trả về photoUrl còn không thì trả về icon
+            <img // if logged in, return photoUrl otherwise return icon
             src = {currentUser ? currentUser.photoURL :userIcon} alt = "avatar" 
             onClick={tonggleProfileActions} />    
             </div>
             <div className="profile_actions"
             ref ={profileActionRef}
             onClick={tonggleProfileActions}>
-              { // nếu  đăng nhập được thì sẽ có đăng xuất 
-                currentUser ?( <span style ={{cursor :"pointer"}} onClick={logOut}>Đăng xuất</span> ): <div>
-                  <Link to ="/login">Đăng nhập</Link>
+              { //If you can log in, you will be able to log out
+                currentUser ?( <span style ={{cursor :"pointer"}} onClick={logOut}>Logout</span> ): <div>
+                  <Link to ="/login">Login</Link>
                 </div>
               }
             </div>
-           
-             
-           
-             
-            
-            
-             
-
-            <span className="mobile__menu" onClick={toggleMenu}>
+    <span className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>
             </span>
           </div>

@@ -23,7 +23,7 @@ const TestimonialSlider = () => {
     <Slider {...settings}>
       <div>
         <p className="review__text">
-          "Trời ưi , bánh Burger Phờ đỉnh quá :v tui ăn thử 1 miếng mà nghiện luôn nè , có ship sang Hàn quốc không shop :v "
+          "Oh my gosh, the Pho Burger is so good :v I tried 1 piece and I'm addicted, do you ship to Korea? :v "
         </p>
         <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava01} alt="avatar" className="rounded"/>
@@ -32,7 +32,7 @@ const TestimonialSlider = () => {
       </div>
       <div>
         <p className="review__text">
-          "Pizza chay rất ngon mà lại tốt cho sức khỏe recomment ae ăn nhé , anh em có thể ăn 5 cái cũng không sợ béo như tôi nhé =)))"
+          "Vegetarian pizza is very delicious but good for health. Recomment everyone to eat, you can eat 5 and you won't be afraid of being fat like me =)))"
         </p>
         <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava02} alt="avatar" className="rounded"/>
@@ -41,7 +41,7 @@ const TestimonialSlider = () => {
       </div>
       <div>
         <p className="review__text">
-          "Wao,thật không thể tin nổi .Bánh mì ở đây ăn rất khác so với bên ngoài . 1 trải nghiệm tốt về món ăn Việt Nam "
+          "Wow, this is unbelievable. The bread here is very different from the outside. 1 good experience of Vietnamese food"
         </p>
         <div className="slider__content d-flex align-items-center gap-3">
           <img src={ava03} alt="avatar" className="rounded"/>

@@ -86,30 +86,30 @@ const FoodDetail = () => {
               <div className="single__product-content">
                 <h2 className="product__title mb-3">{title}</h2>
                 <span className="product__price">
-                  Giá: <span>{price}₫</span>
+                  Prince: <span>{price}$</span>
                 </span>
                 <p className="category mb-5">
                   Category: <span>{category}</span>
                 </p>
 
                 <button onClick={addItem} className="addToCart__btn">
-                  Thêm vào giỏ hàng
+                  add to cart
                 </button>
               </div>
             </Col>
             <Col lg="12">
               <div className="tabs d-flex align-items-center gap-3 py-2">
                 <h6
-                  className={`{tab === "desc" ? "tab__active" : ""}₫`}
+                  className={`{tab === "desc" ? "tab__active" : ""}$`}
                   onClick={() => setTab("desc")}
                 >
-                  Mổ tả món ăn
+                  Description of the dish
                 </h6>
                 <h6
-                  className={`{tab === "rev" ? "tab__active" : ""}₫`}
+                  className={`{tab === "rev" ? "tab__active" : ""}$`}
                   onClick={() => setTab("rev")}
                 >
-                  Đánh giá
+                  Reviews from customers
                 </h6>
               </div>
 
